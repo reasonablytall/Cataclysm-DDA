@@ -1,0 +1,15 @@
+name: "Daily Experimental Release"
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow-dispatch:
+jobs:
+  push-tag:
+    name: Push Release Tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Push tag
+        run: |
+          git tag experimental-$(date "+%Y-%m-%d")
+          git push
