@@ -2,7 +2,7 @@ name: "Daily Experimental Release"
 on:
   schedule:
     - cron: '0 0 * * *'
-  workflow-dispatch:
+  workflow_dispatch:
 jobs:
   push-tag:
     name: Push Release Tag
